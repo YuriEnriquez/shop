@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yu Store</title>
+    <link rel="stylesheet" type="text/css" href="YuStore.css">
+    </head>
+    <header>
+        <div style = "background-color: #C7F2A4;; display: flex; flex-direction: row;">
+            <div style = "background-color: #C7F2A4;; width: 300px; height: 250px;"><img src="Logo.png" alt="Logo Image" class="logo"></div>
+            <div>
+                <h1>Plushie Empire</h1>
+            </div>
+        </div>
+    </header>
+<body>
+    <div style = "background-color:#B6E388 ; display: flex; flex-direction: row; width: auto; height: 40px;">
+        <h5><u>Home </u>| Top products| Contact Us</h5>
+    </div>
+    <div id="products" style = "background-color:#E1FFB1 ; display: flex; flex-direction: row; width: auto; height: 400px;">
+
+    </div>
+    <div id="products2" style = "background-color:#E1FFB1 ; display: flex; flex-direction: row; width: auto; height: 500px;">
+
+    </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const productsContainer = document.getElementById('products');
+
+    // Fetch products from JSON file
+    fetch('YuStore.json')
+        .then(response => response.json())
+        .then(products => {
+            // Display each product
+            products.forEach(product => {
+                const productElement = document.createElement('div');
+                productElement.classList.add('product');
+
+                const imageElement = document.createElement('img');
+                imageElement.src = product.image;
+                imageElement.alt = product.name;
+
+                const nameElement = document.createElement('h3');
+                nameElement.textContent = product.name;
+
+                const priceElement = document.createElement('p');
+                priceElement.textContent = `₱${product.price.toFixed(2)}`;
+
+                productElement.appendChild(imageElement);
+                productElement.appendChild(nameElement);
+                productElement.appendChild(priceElement);
+
+                productsContainer.appendChild(productElement);
+            });
+        })
+        .catch(error => console.error('Error fetching products:', error));
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    const productsContainer = document.getElementById('products2');
+
+    // Fetch products from JSON file
+    fetch('YuStore2.json')
+        .then(response => response.json())
+        .then(products => {
+            // Display each product
+            products.forEach(product => {
+                const productElement = document.createElement('div');
+                productElement.classList.add('product');
+
+                const imageElement = document.createElement('img');
+                imageElement.src = product.image;
+                imageElement.alt = product.name;
+
+                const nameElement = document.createElement('h3');
+                nameElement.textContent = product.name;
+
+                const priceElement = document.createElement('p');
+                priceElement.textContent = `₱${product.price.toFixed(2)}`;
+
+                productElement.appendChild(imageElement);
+                productElement.appendChild(nameElement);
+                productElement.appendChild(priceElement);
+
+                productsContainer.appendChild(productElement);
+            });
+        })
+        .catch(error => console.error('Error fetching products:', error));
+});
+
+
+    </script>
+
+</body>
+<footer>
+    <div style = "background-color:#A4BC92 ; display: flex; flex-direction: row; width: auto; height: 100px;">
+        Copyright 2006-2023 by Yuyu Corporation. All rights reserved.
+    </div>
+</footer>
+</html>

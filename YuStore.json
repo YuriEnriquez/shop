@@ -1,0 +1,34 @@
+[
+    {
+        "name": "Snorlax",
+        "price": 230.00,
+        "image": "images/Snorlax.jpg"
+    },
+    {
+        "name": "Gym Bro Shark",
+        "price": 199.00,
+        "image": "images/Shark.jpg"
+    },
+    {
+        "name": "Sadboi Pou",
+        "price": 99.99,
+        "image": "images/Pou.jpg"
+    },
+    {
+        "name": "Cutie Penguin",
+        "price": 99.99,
+        "image": "images/Penguin.jpg"
+    },{
+        "name": "The Turtil",
+        "price": 120.99,
+        "image": "images/Turtle.jpg"
+    },{
+        "name": "Cinamorrol",
+        "price": 120.99,
+        "image": "images/cotie.jpg"
+    },{
+        "name": "Chubby Catto",
+        "price": 150.00,
+        "image": "images/Chubby.jpg"
+    }
+]
